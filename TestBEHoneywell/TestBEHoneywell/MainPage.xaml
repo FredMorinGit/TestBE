@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TestBEHoneywell.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TestBEHoneywell">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!--  Place new controls here  -->
+        <Label
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            HorizontalOptions="Center"
+            Text="Test LE Dex"
+            VerticalOptions="CenterAndExpand" />
+
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            Clicked="Button_OnClicked"
+            Text="Connect" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            Clicked="ResetDex"
+            Text="Reset DEX" />
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            Clicked="RebootDex"
+            Text="Reboot DEX" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Clicked="TxBase"
+            Text="Send TX" />
+
+
+
+
+        <Button
+            Grid.Row="3"
+            Grid.Column="0"
+            Clicked="RxBase"
+            Text="Get Rx" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="1"
+            Clicked="TxAdj"
+            Text="Send Adj" />
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Clicked="CancelThis"
+            Text="CANCEL NOW" />
+
+
+        <ListView
+            x:Name="MyListView"
+            Grid.Row="4"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HorizontalOptions="FillAndExpand"
+            ItemsSource="{Binding History}"
+            VerticalOptions="FillAndExpand" />
+
+    </Grid>
+
+
+</ContentPage>
